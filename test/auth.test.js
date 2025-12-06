@@ -23,7 +23,7 @@ describe("Auth tests", () => {
 	it("Успешная авторизация", async () => {
 		const page = new LoginPage(driver);
 		await page.open();
-		await driver.sleep(1500); // ждём, чтобы страница прогрузилась
+		await driver.sleep(1500);
 
 		await page.login("test@test.com", "123456");
 		await driver.sleep(2000);

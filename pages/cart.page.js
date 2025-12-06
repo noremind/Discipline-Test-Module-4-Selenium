@@ -37,11 +37,9 @@ export default class CartPage extends BasePage {
 		if (items.length === 0) return false;
 
 		try {
-			// Находим кнопку Delete Item внутри первой карточки
 			const btn = await items[0].findElement(By.xpath(".//a[text()='Delete Item']"));
 			await btn.click();
 
-			// Ждём появления alert и принимаем его
 			await this.driver.wait(until.alertIsPresent(), 5000);
 			const alert = await this.driver.switchTo().alert();
 			await alert.accept();

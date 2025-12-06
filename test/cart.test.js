@@ -9,10 +9,8 @@ describe("Cart tests", () => {
 	let driver;
 
 	before(async () => {
-		// ServiceBuilder объект
 		const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
 
-		// Передаём его в Builder
 		driver = await new Builder()
 			.forBrowser("chrome")
 			.setChromeService(serviceBuilder)

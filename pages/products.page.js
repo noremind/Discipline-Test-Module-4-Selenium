@@ -6,7 +6,6 @@ export default class ProductsPage extends BasePage {
 	constructor(driver) {
 		super(driver);
 		this.url = "https://sweetshop.netlify.app/";
-		this.urlBasket = "https://sweetshop.netlify.app/basket";
 
 
 		this.PRODUCT_CARD = By.css(".cards, .product-card, .card");
@@ -23,9 +22,6 @@ export default class ProductsPage extends BasePage {
 		await super.open(this.url);
 	}
 
-	async openBasket() {
-		await super.open(this.urlBasket);
-	}
 
 
 	async getProductCards() {

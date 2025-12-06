@@ -4,3 +4,4 @@
 ## Установка
 ```bash
 npm install
+npm test

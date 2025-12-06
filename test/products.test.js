@@ -8,11 +8,11 @@ let driver;
 
 describe("Products Page", () => {
 	before(async () => {
-		const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path); // объект ServiceBuilder
+		const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
 
 		driver = await new Builder()
 			.forBrowser("chrome")
-			.setChromeService(serviceBuilder) // передаём ServiceBuilder
+			.setChromeService(serviceBuilder)
 			.build();
 	});
 
@@ -23,7 +23,7 @@ describe("Products Page", () => {
 	it("Проверка наличия элементов у товаров", async () => {
 		const page = new ProductsPage(driver);
 		await page.open();
-		await driver.sleep(1500); // ждём загрузки страницы
+		await driver.sleep(1500);
 
 		const cards = await page.getProductCards();
 		expect(cards.length).to.be.greaterThan(0);
